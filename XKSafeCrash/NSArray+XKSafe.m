@@ -2,12 +2,13 @@
 //  NSArray+XKSafe.m
 //  CrashTest
 //
-//  Created by 王晓康 on 2018/4/17.
+//  Created by wangxiaokang on 2018/4/17.
 //  Copyright © 2018年 wangxiaokang. All rights reserved.
 //
 
 #import "NSArray+XKSafe.h"
 #import "NSObject+XKSafe.h"
+#import <UIKit/UIKit.h>
 
 @implementation NSArray (XKSafe)
 
@@ -19,7 +20,7 @@
         /*class类方法*/
         [NSObject swizzleClassMethod:[self class] methodSEL_1:@selector(arrayWithObjects:count:) methodSEL_2:@selector(XKSafeArrayWithObjects:count:)];
         
-        /*实例方法*/
+        /*实例方法-分不同类簇*/
         Class __NSArray = NSClassFromString(@"NSArray");
         Class __NSArrayI = NSClassFromString(@"__NSArrayI");
         Class __NSSingleObjectArrayI = NSClassFromString(@"__NSSingleObjectArrayI");
@@ -42,8 +43,11 @@
         
         [NSObject swizzleInstanceMethod:__NSSingleObjectArrayI methodSEL_1:@selector(getObjects:range:) methodSEL_2:@selector(NSSingleObjectArrayI_XKSafeGetObjects:range:)];
         
-        // objectAtIndexedSubscript 未开发
-        
+        // objectAtIndexedSubscript
+        if ([[UIDevice currentDevice].systemVersion floatValue] >= 11.0)
+        {
+            [NSObject swizzleInstanceMethod:__NSArrayI methodSEL_1:@selector(objectAtIndexedSubscript:) methodSEL_2:@selector(NSArrayI_XKSafeObjectAtIndexedSubscript:)];
+        }
     });
 }
 
@@ -58,7 +62,8 @@
         instance = [self XKSafeArrayWithObjects:objects count:cnt];
     }
     @catch (NSException *exception) {
-        
+        NSLog(@"exception = %@",exception);
+        NSLog(@"数组初始化方法异常");
         //以下是对错误数据的处理，把为nil的数据去掉,然后初始化数组
         NSInteger newObjsIndex = 0;
         id  _Nonnull __unsafe_unretained newObjects[cnt];
@@ -186,6 +191,24 @@
         
     }
 }
+
+#pragma mark - objectAtIndexedSubscript:
+- (id)NSArrayI_XKSafeObjectAtIndexedSubscript:(NSUInteger)idx {
+    id object = nil;
+    
+    @try {
+        object = [self NSArrayI_XKSafeObjectAtIndexedSubscript:idx];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"exception = %@",exception);
+        NSLog(@"NSArrayI_XKSafeObjectAtIndexedSubscript:-方法异常");
+    }
+    @finally {
+        return object;
+    }
+    
+}
+
 @end
 
 
@@ -214,6 +237,10 @@
         [NSObject swizzleInstanceMethod:arrayMClass methodSEL_1:@selector(getObjects:range:) methodSEL_2:@selector(XKSafeGetObjects:range:)];
         
         //objectAtIndexedSubscript
+        if ([[UIDevice currentDevice].systemVersion floatValue] >= 11.0)
+        {
+            [NSObject swizzleInstanceMethod:arrayMClass methodSEL_1:@selector(objectAtIndexedSubscript:) methodSEL_2:@selector(NSArrayM_XKSafeMuObjectAtIndexedSubscript:)];
+        }
     });
 }
 
@@ -288,6 +315,23 @@
     } @finally {
         
     }
+}
+
+#pragma mark - MuObjectAtIndexedSubscript:
+- (id)NSArrayM_XKSafeMuObjectAtIndexedSubscript:(NSUInteger)idx {
+    id object = nil;
+    
+    @try {
+        object = [self NSArrayM_XKSafeMuObjectAtIndexedSubscript:idx];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"getObjects = %@",exception);
+        NSLog(@"MuObjectAtIndexedSubscript-方法异常");
+    }
+    @finally {
+        return object;
+    }
+    
 }
 
 @end

@@ -142,9 +142,9 @@
 		0D9C30A62088E52C00DA5913 /* XKSafeCrash */ = {
 			isa = PBXGroup;
 			children = (
+				0D9C30A92088E52C00DA5913 /* NSObject+XKSafe.h */,
 				0D9C30A72088E52C00DA5913 /* NSObject+XKSafe.m */,
 				0D9C30A82088E52C00DA5913 /* NSArray+XKSafe.h */,
-				0D9C30A92088E52C00DA5913 /* NSObject+XKSafe.h */,
 				0D9C30AA2088E52C00DA5913 /* NSArray+XKSafe.m */,
 			);
 			path = XKSafeCrash;
