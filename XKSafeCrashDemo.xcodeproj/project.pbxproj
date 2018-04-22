@@ -87,7 +87,7 @@
 		0D9C30662088E4AC00DA5913 = {
 			isa = PBXGroup;
 			children = (
-				0D9C30A62088E52C00DA5913 /* XKSafeCrash */,
+				0D9C30AD208C585F00DA5913 /* XKCrash */,
 				0D9C30712088E4AC00DA5913 /* XKSafeCrashDemo */,
 				0D9C308A2088E4AD00DA5913 /* XKSafeCrashDemoTests */,
 				0D9C30952088E4AD00DA5913 /* XKSafeCrashDemoUITests */,
@@ -139,7 +139,7 @@
 			path = XKSafeCrashDemoUITests;
 			sourceTree = "<group>";
 		};
-		0D9C30A62088E52C00DA5913 /* XKSafeCrash */ = {
+		0D9C30AD208C585F00DA5913 /* XKCrash */ = {
 			isa = PBXGroup;
 			children = (
 				0D9C30A92088E52C00DA5913 /* NSObject+XKSafe.h */,
@@ -147,7 +147,7 @@
 				0D9C30A82088E52C00DA5913 /* NSArray+XKSafe.h */,
 				0D9C30AA2088E52C00DA5913 /* NSArray+XKSafe.m */,
 			);
-			path = XKSafeCrash;
+			path = XKCrash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
