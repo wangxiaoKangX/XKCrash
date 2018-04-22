@@ -19,12 +19,11 @@
         /*class类方法*/
         [NSObject swizzleClassMethod:[self class] methodSEL_1:@selector(arrayWithObjects:count:) methodSEL_2:@selector(XKSafeArrayWithObjects:count:)];
         
-        /*实例方法-分不同类簇*/
+        /*实例方法-分不同Array的类簇*/
         Class __NSArray = NSClassFromString(@"NSArray");
         Class __NSArrayI = NSClassFromString(@"__NSArrayI");
         Class __NSSingleObjectArrayI = NSClassFromString(@"__NSSingleObjectArrayI");
         Class __NSArray0 = NSClassFromString(@"__NSArray0");
-        
     
         [NSObject swizzleInstanceMethod:__NSArray methodSEL_1:@selector(objectsAtIndexes:) methodSEL_2:@selector(XKSafeObjectsAtIndexes:)];
         

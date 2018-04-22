@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XKCrash"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "create a XKCrash."
 
   # This description is used to generate tags and improve search results.
@@ -92,7 +92,7 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "XKCrash", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -118,7 +118,7 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "UIKit"
-  s.frameworks = "Foundation", "UIKit"
+  # s.frameworks = "Foundation", "UIKit"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
