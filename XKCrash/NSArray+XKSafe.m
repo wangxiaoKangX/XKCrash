@@ -8,7 +8,6 @@
 
 #import "NSArray+XKSafe.h"
 #import "NSObject+XKSafe.h"
-#import <UIKit/UIKit.h>
 
 @implementation NSArray (XKSafe)
 
@@ -44,10 +43,10 @@
         [NSObject swizzleInstanceMethod:__NSSingleObjectArrayI methodSEL_1:@selector(getObjects:range:) methodSEL_2:@selector(NSSingleObjectArrayI_XKSafeGetObjects:range:)];
         
         // objectAtIndexedSubscript
-        if ([[UIDevice currentDevice].systemVersion floatValue] >= 11.0)
-        {
+//        if ([[UIDevice currentDevice].systemVersion floatValue] >= 11.0)
+//        {
             [NSObject swizzleInstanceMethod:__NSArrayI methodSEL_1:@selector(objectAtIndexedSubscript:) methodSEL_2:@selector(NSArrayI_XKSafeObjectAtIndexedSubscript:)];
-        }
+//        }
     });
 }
 
@@ -237,10 +236,10 @@
         [NSObject swizzleInstanceMethod:arrayMClass methodSEL_1:@selector(getObjects:range:) methodSEL_2:@selector(XKSafeGetObjects:range:)];
         
         //objectAtIndexedSubscript
-        if ([[UIDevice currentDevice].systemVersion floatValue] >= 11.0)
-        {
+//        if ([[UIDevice currentDevice].systemVersion floatValue] >= 11.0)
+//        {
             [NSObject swizzleInstanceMethod:arrayMClass methodSEL_1:@selector(objectAtIndexedSubscript:) methodSEL_2:@selector(NSArrayM_XKSafeMuObjectAtIndexedSubscript:)];
-        }
+//        }
     });
 }
 
