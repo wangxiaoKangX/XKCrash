@@ -59,19 +59,10 @@
     //test1    beyond bounds
     [array44 insertObject:@"cool" atIndex:5];
     
-    
-    
 //    NSMutableArray *array6 = @[@"name", @"namename"].mutableCopy;
     NSRange range6 = NSMakeRange(0, 11);
     __unsafe_unretained id cArray6[range6.length];
     [array getObjects:cArray6 range:range];
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end

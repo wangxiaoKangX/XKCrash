@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "XKCrash"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "create a XKCrash."
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                  arrayCrash
+                  undate
                    DESC
 
   s.homepage     = "https://github.com/wangxkK/XKCrash"

@@ -17,6 +17,7 @@
 		0D9C30972088E4AD00DA5913 /* XKSafeCrashDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C30962088E4AD00DA5913 /* XKSafeCrashDemoUITests.m */; };
 		0D9C30AB2088E52C00DA5913 /* NSObject+XKSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C30A72088E52C00DA5913 /* NSObject+XKSafe.m */; };
 		0D9C30AC2088E52C00DA5913 /* NSArray+XKSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C30AA2088E52C00DA5913 /* NSArray+XKSafe.m */; };
+		0D9C30F5208F739B00DA5913 /* TestCrashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9C30F4208F739B00DA5913 /* TestCrashViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		0D9C30A82088E52C00DA5913 /* NSArray+XKSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+XKSafe.h"; sourceTree = "<group>"; };
 		0D9C30A92088E52C00DA5913 /* NSObject+XKSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+XKSafe.h"; sourceTree = "<group>"; };
 		0D9C30AA2088E52C00DA5913 /* NSArray+XKSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+XKSafe.m"; sourceTree = "<group>"; };
+		0D9C30F3208F739B00DA5913 /* TestCrashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCrashViewController.h; sourceTree = "<group>"; };
+		0D9C30F4208F739B00DA5913 /* TestCrashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCrashViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				0D9C30732088E4AC00DA5913 /* AppDelegate.m */,
 				0D9C30752088E4AC00DA5913 /* ViewController.h */,
 				0D9C30762088E4AC00DA5913 /* ViewController.m */,
+				0D9C30F3208F739B00DA5913 /* TestCrashViewController.h */,
+				0D9C30F4208F739B00DA5913 /* TestCrashViewController.m */,
 				0D9C30782088E4AC00DA5913 /* Main.storyboard */,
 				0D9C307B2088E4AD00DA5913 /* Assets.xcassets */,
 				0D9C307D2088E4AD00DA5913 /* LaunchScreen.storyboard */,
@@ -282,6 +287,7 @@
 			files = (
 				0D9C30772088E4AC00DA5913 /* ViewController.m in Sources */,
 				0D9C30AC2088E52C00DA5913 /* NSArray+XKSafe.m in Sources */,
+				0D9C30F5208F739B00DA5913 /* TestCrashViewController.m in Sources */,
 				0D9C30AB2088E52C00DA5913 /* NSObject+XKSafe.m in Sources */,
 				0D9C30822088E4AD00DA5913 /* main.m in Sources */,
 				0D9C30742088E4AC00DA5913 /* AppDelegate.m in Sources */,
